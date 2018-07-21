@@ -1,13 +1,22 @@
 //define other files to load.
-//depending on file location you may need to use "<dht.h>" instead of ""dht.h"" Use ""dht.h"" for local files, an other for files in default library location.
 
+//depending on file location you may need to use "<dht.h>" instead of ""dht.h"" Use ""dht.h"" for local files, an other for files in default library location.
 #include "dht.h"
 
-
+//Global scope variables.
 #define TemperatureAndHumidity_pin 7 // set pin for temp and humidity. this (and all pins) can be changed here.
-
 //define global scope variables here
 dht DHT; //temp and humidity global object - DO NOT RENAME THIS VARIABLE
+
+//Oxygen Air Sensor variables
+const float VRefer = 3.3;// voltage of adc reference
+const int OxygenSensorPin = A5;
+
+
+// ====================================================
+// |              Standard Functions                  |
+// |                                                  |
+// ====================================================
 
 void setup(){
   Serial.begin(9600); //begin the serial to print to.
